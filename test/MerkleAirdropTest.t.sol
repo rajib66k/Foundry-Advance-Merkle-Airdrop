@@ -32,7 +32,7 @@ contract MerkleAirdropTest is Test {
         bytes32 digest = airdrop.getMassageHash(user, AMOUNT_TO_CALAIM);
 
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(userPrivKey, digest);
-        
+
         vm.prank(gasPayer);
         airdrop.claim(user, AMOUNT_TO_CALAIM, PROOF, v, r, s);
 

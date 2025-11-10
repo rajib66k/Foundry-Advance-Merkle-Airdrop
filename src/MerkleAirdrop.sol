@@ -53,7 +53,7 @@ contract MerkleAirdrop is EIP712 {
 
     function getMassageHash(address account, uint256 amount) public view returns (bytes32) {
         // rturns digest
-    // EIP712 compartible
+        // EIP712 compartible
         return
             _hashTypedDataV4(keccak256(abi.encode(MASSAGE_TYPEHASH, AirdropClaim({account: account, amount: amount}))));
     }
